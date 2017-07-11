@@ -55,12 +55,12 @@ class Events
         }
     }
 
-    public static function getEventsBasic()
+    public static function getEventsBasic($offset)
     {
         $query = "SELECT name, organizer, date, price, category1, category2, url, image_url 
 					FROM Events where date > CURDATE()
 					ORDER BY date ASC
-					LIMIT ?,?";
+					LIMIT " . $offset . ",10";
         try {
             // Preparar sentencia
             $command = Database::getInstance()->getDb()->prepare($query);
