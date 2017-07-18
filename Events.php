@@ -57,7 +57,7 @@ class Events
 
     public static function getEventsBasic($offset)
     {
-        $query = "SELECT name, organizer, date, price, category1, category2, url, image_url 
+        $query = "SELECT id, name, organizer, date, category1, category2, image_url 
 					FROM Events where date > CURDATE()
 					ORDER BY date ASC
 					LIMIT " . $offset . ",10";

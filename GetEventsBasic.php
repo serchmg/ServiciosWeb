@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         // Tratar retorno
         $return = Events::getEventsBasic($offset);
         if ($return) {
-            $event["status"] = 1;		// cambio "1" a 1 porque no coge bien la cadena.
+            $event["status"] = '1';		// cambio "1" a 1 porque no coge bien la cadena.
             $event["event"] = $return;
             // Enviar objeto json del alumno
             print json_encode($event);
